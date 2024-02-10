@@ -34,7 +34,7 @@ int main(void)
   gb_insert_buf(&gb, f.contents, f.size);
   fc_deinit(&f);
   gb_move_cursor(&gb, -10000);
-  gb_insert_cstr(&gb, "OMGOMG\n");
+  gb_insert_cstr(&gb, "// This is a dynamically inserted comment \n\n");
 
   InitWindow(width, height, window_title);
   SetTargetFPS(60);
