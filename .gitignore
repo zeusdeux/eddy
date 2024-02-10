@@ -7,6 +7,7 @@
 
 !resources
 !resources/*
+
 !src
 !src/**/*.[hc]
 
@@ -18,3 +19,6 @@ lib/raylib/*
 
 !lib/raylib/build
 !lib/raylib/build/**
+
+!tests
+!tests/**/*
