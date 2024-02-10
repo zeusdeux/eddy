@@ -1,0 +1,20 @@
+*
+!.gitignore
+!Makefile
+!Readme.md
+
+!*.[hc]
+
+!resources
+!resources/*
+!src
+!src/**/*.[hc]
+
+!lib
+!lib/raylib
+
+# start by ignore everything in lib/raylib
+lib/raylib/*
+
+!lib/raylib/build
+!lib/raylib/build/**
