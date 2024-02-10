@@ -32,6 +32,8 @@ int main(void)
   gb_t gb = {0};
   gb_insert_buf(&gb, f.contents, f.size);
   fc_deinit(&f);
+  gb_move_cursor(&gb, -10000);
+  gb_insert_cstr(&gb, "OMGOMG\n");
 
   InitWindow(width, height, window_title);
   SetTargetFPS(60);
@@ -40,13 +42,15 @@ int main(void)
   SetTextLineSpacing(20);
 
   while (!WindowShouldClose()) {
+    const char* gb_str = gb_buf_as_cstr(&gb);
     BeginDrawing();
     ClearBackground(GetColor(0x282c34ff));
     DrawTextEx(fira_ttf,
-               gb.buf,
+               gb_str,
                (Vector2){ 10.0f, 20.0f } ,
                (float)fira_ttf.baseSize, 2.0f, WHITE);
     EndDrawing();
+    free((void *)gb_str);
   }
 
   UnloadFont(fira_ttf);
