@@ -11,7 +11,7 @@
 int main(void)
 {
   const uint16_t width = 1024, height = 780;
-  const char* file_path = "tests/mocks/typescript.ts";
+  const char* file_path = "./tests/mocks/typescript.ts";
   const char window_title_base[] = "Eddy - ";
   const uint8_t file_path_len = strlen(file_path) + strlen(window_title_base) + 1; /* +1 for \0 as needed by snprintf */
   /**
